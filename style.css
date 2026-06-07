@@ -296,19 +296,51 @@ footer {
     font-size: 1rem;
 }
 
+.menu-btn {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+
 @media (max-width: 900px) {
+
+    .menu-btn {
+        display: block;
+    }
 
     nav {
         padding: 18px 5%;
     }
 
-    .logo {
-        font-size: 1.8rem;
+    .links {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: #111827;
+
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .links.show {
+        display: flex !important;
     }
 
     .links a {
-        margin-left: 14px;
-        font-size: 0.95rem;
+        margin: 12px 0;
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        font-size: 1.8rem;
     }
 
     .hero {

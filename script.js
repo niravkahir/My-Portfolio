@@ -32,22 +32,12 @@ window.addEventListener("scroll", () => {
 
 });
 
-window.addEventListener("scroll", () => {
-    let current = "";
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navLinks");
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
+menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
 
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-    });
+    console.log(navMenu);
+    console.log(navMenu.className);
 });
