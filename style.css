@@ -225,59 +225,52 @@ section p {
 }
 
 .contact-container {
-    display: flex;
-    flex-direction: column;
-
-    gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 900px;
 }
 
 .contact-card {
     display: flex;
     align-items: center;
-
     gap: 18px;
 
-    width: 340px;
-
-    padding: 18px;
-
-    text-decoration: none;
+    padding: 22px;
 
     background: #111827;
 
-    color: white;
+    border: 1px solid rgba(255,255,255,0.08);
 
     border-radius: 18px;
 
-    border: 1px solid rgba(255,255,255,0.08);
+    text-decoration: none;
+    color: white;
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .contact-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 
     border-color: #22c55e;
 
-    box-shadow: 0 0 20px rgba(34,197,94,0.15);
+    box-shadow: 0 0 25px rgba(34,197,94,0.25);
 }
 
 .icon {
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 .contact-card h3 {
     color: #22c55e;
-
-    margin-bottom: 3px;
-
-    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
 }
 
 .contact-card p {
     color: #d1d5db;
-
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 #contact {
@@ -374,4 +367,13 @@ footer {
     .contact-card {
         width: 100%;
     }
+
+    .contact-container {
+    grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        width: 100%;
+    }
+
 }
