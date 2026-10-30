@@ -4,6 +4,7 @@ const navLinks = document.querySelectorAll("nav a");
 window.addEventListener("scroll", () => {
 
     let currentSection = "";
+    const scrollPosition = window.scrollY + 150; 
 
     sections.forEach(section => {
 
@@ -11,12 +12,16 @@ window.addEventListener("scroll", () => {
         const sectionHeight = section.clientHeight;
 
         if (
-            window.scrollY >= sectionTop - 150 &&
-            window.scrollY < sectionTop + sectionHeight - 150
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
         ) {
             currentSection = section.id;
         }
     });
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+        currentSection = "contact";
+    }
 
     navLinks.forEach(link => {
 
@@ -37,7 +42,4 @@ const navMenu = document.getElementById("navLinks");
 
 menuBtn.addEventListener("click", () => {
     navMenu.classList.toggle("show");
-
-    console.log(navMenu);
-    console.log(navMenu.className);
 });
